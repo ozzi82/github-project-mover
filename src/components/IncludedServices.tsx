@@ -26,6 +26,7 @@ const IncludedServices = () => {
       title: "3D Day & Night Views",
       description:
         "Realistic 3D renderings showing your signage illuminated and non-illuminated.",
+      image: dayNightRenderingImage,
       highlight: true,
     },
     {
