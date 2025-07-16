@@ -12,7 +12,7 @@ import { ArrowRight, CheckCircle, Star, Clock } from "lucide-react";
 const plazaLettersImage =
   "https://cdn.builder.io/api/v1/image/assets%2F91c68b23f3a04bf5a94564bf5338d5e4%2F2f66ed09023d40b3b70fa7bf13e196fc";
 const haloLettersImage =
-  "https://cdn.builder.io/api/v1/image/assets%2F91c68b23f3a04bf5a94564bf5338d5e4%2Fd9657f0406e64cb4a79cc1ce8cf8e68f";
+  "https://cdn.builder.io/api/v1/image/assets%2F91c68b23f3a04bf5a94564bf5338d5e4%2Fdc7335d63a994993b10b147eb551d888";
 const FeaturedProducts = () => {
   const featuredProducts = [
     {
