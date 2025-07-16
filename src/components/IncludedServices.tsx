@@ -6,12 +6,17 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { FileImage, Palette, Zap, Package, Shield, Eye } from "lucide-react";
-const designRenderingImage = "/src/assets/3d-design-rendering.jpg"; // UPDATE: Technical drawing of ABC channel letters
-const dayNightRenderingImage = "/src/assets/day-night-rendering.jpg"; // UPDATE: Isometric A letter day/night view
+const designRenderingImage =
+  "https://cdn.builder.io/api/v1/image/assets%2F91c68b23f3a04bf5a94564bf5338d5e4%2F0f6bf09812034c52b4c36b2b128d9271";
+const dayNightRenderingImage =
+  "https://cdn.builder.io/api/v1/image/assets%2F91c68b23f3a04bf5a94564bf5338d5e4%2F833fd3ad4ce14c289c6345cc57c4aabe";
 const touchUpPaintImage = "/src/assets/touch-up-paint.jpg";
-const installationPatternImage = "/src/assets/installation-pattern.jpg";
-const powerSuppliesImage = "/src/assets/power-supplies.jpg";
-const warrantyImage = "/src/assets/warranty.jpg";
+const installationPatternImage =
+  "https://cdn.builder.io/api/v1/image/assets%2F91c68b23f3a04bf5a94564bf5338d5e4%2F997f0f8ca7fc4a228eb0ffe6f7b083e7";
+const powerSuppliesImage =
+  "https://cdn.builder.io/api/v1/image/assets%2F91c68b23f3a04bf5a94564bf5338d5e4%2F5e599fd898934d9192f69bcf20b72701?format=webp";
+const warrantyImage =
+  "https://cdn.builder.io/api/v1/image/assets%2F91c68b23f3a04bf5a94564bf5338d5e4%2F1b92a292fc514e89a4430999643f8eff";
 const IncludedServices = () => {
   const services = [
     {
