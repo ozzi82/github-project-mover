@@ -366,6 +366,29 @@ All colors MUST be HSL.
     opacity: 0;
   }
 
+  @keyframes slideReveal {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0.8;
+    }
+    15% {
+      transform: translateX(-80%);
+      opacity: 0.9;
+    }
+    50% {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+    85% {
+      transform: translateX(80%);
+      opacity: 0.9;
+    }
+    100% {
+      transform: translateX(100%);
+      opacity: 0.8;
+    }
+  }
+
   /* HubSpot Form Styling */
   .hubspot-form-wrapper .hbspt-form {
     font-family: inherit !important;
