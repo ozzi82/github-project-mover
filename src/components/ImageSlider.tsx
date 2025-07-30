@@ -13,11 +13,15 @@ const ImageSlider = ({ dayImage, nightImage, productTitle }: ImageSliderProps) =
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   const toggleView = () => {
+    if (isTransitioning) return;
+
     setIsTransitioning(true);
+
+    // After the slide animation completes, change the image and slide back
     setTimeout(() => {
       setCurrentView(currentView === 'day' ? 'night' : 'day');
-      setTimeout(() => setIsTransitioning(false), 100);
-    }, 200);
+      setTimeout(() => setIsTransitioning(false), 800);
+    }, 600);
   };
 
   return (
