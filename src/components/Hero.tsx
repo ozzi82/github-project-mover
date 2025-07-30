@@ -109,7 +109,7 @@ const Hero = ({ data, query, variables }: HeroProps = {}) => {
           setFallbackContent();
         }
       } catch (err) {
-        console.error("Failed to fetch hero content:", err);
+        console.error("Failed to fetch hero content:", err instanceof Error ? err.message : String(err));
         setFallbackContent();
       }
     };
