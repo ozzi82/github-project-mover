@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
+import ProductDetail from "./pages/ProductDetail";
 import TrimlessChannelLetters from "./pages/TrimlessChannelLetters";
 import CastBlockAcrylicLetters from "./pages/CastBlockAcrylicLetters";
 import TrimlessVsTrimCap from "./pages/TrimlessVsTrimCap";
