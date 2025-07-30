@@ -93,7 +93,13 @@ const Hero = ({ data, query, variables }: HeroProps = {}) => {
           .eq("is_active", true)
           .maybeSingle();
 
-        if (data && !error) {
+        if (error) {
+          console.warn("Supabase error (using fallback):", error.message);
+          setFallbackContent();
+          return;
+        }
+
+        if (data) {
           setContent({
             title: data.title,
             subtitle: data.subtitle,
@@ -105,11 +111,11 @@ const Hero = ({ data, query, variables }: HeroProps = {}) => {
               data.additional_data as HeroContent["additional_data"],
           });
         } else {
-          console.error("Error fetching hero content:", error?.message || error);
+          console.info("No hero content found in database, using fallback");
           setFallbackContent();
         }
       } catch (err) {
-        console.error("Failed to fetch hero content:", err instanceof Error ? err.message : String(err));
+        console.warn("Failed to fetch hero content (using fallback):", err instanceof Error ? err.message : String(err));
         setFallbackContent();
       }
     };
