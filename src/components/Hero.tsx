@@ -64,6 +64,30 @@ const Hero = ({ data, query, variables }: HeroProps = {}) => {
   const tinaProps = data ? { data, query, variables } : null;
   const { data: tinaData } = tinaProps ? useTina(tinaProps) : { data: null };
 
+  const setFallbackContent = () => {
+    setContent({
+      title: "Wholesale Trimless Channel Letters &",
+      subtitle: "Cast Block Acrylic",
+      description:
+        "UL-listed trimless channel letters and precision-cut cast block acrylic letters. German engineering precision meets Florida speed - serving sign companies across USA and Canada.",
+      image_url: "/lovable-uploads/b65672d5-65aa-4d28-b91a-f20d6649be08.png",
+      button_text: "Request Wholesale Quote",
+      button_url: "/contact",
+      additional_data: {
+        tagline: "Engineered for Sign Professionals",
+        secondaryButtonText: "View Product Catalog",
+        secondaryButtonUrl: "/products",
+        stats: [
+          { icon: "Factory", value: "25+ Years", label: "Manufacturing" },
+          { icon: "Truck", value: "24-48h", label: "Quote Response" },
+          { icon: "Award", value: "UL Listed", label: "Components" },
+          { icon: "Zap", value: "LED", label: "Efficient Lighting" },
+        ],
+      },
+    });
+    setIsLoading(false);
+  };
+
   useEffect(() => {
     if (tinaData) {
       // Convert Tina data to our format
@@ -82,17 +106,26 @@ const Hero = ({ data, query, variables }: HeroProps = {}) => {
           stats: tinaContent.stats,
         },
       });
+      setIsLoading(false);
       return;
     }
 
     const fetchHeroContent = async () => {
       try {
-        const { data, error } = await supabase
+        // Set a timeout to avoid long loading times
+        const timeoutPromise = new Promise((_, reject) =>
+          setTimeout(() => reject(new Error('Request timeout')), 3000)
+        );
+
+        const supabasePromise = supabase
           .from("website_content")
           .select("*")
           .eq("content_type", "hero")
           .eq("is_active", true)
           .maybeSingle();
+
+        const result = await Promise.race([supabasePromise, timeoutPromise]);
+        const { data, error } = result as any;
 
         if (error) {
           console.warn("Supabase error (using fallback):", error.message);
@@ -111,6 +144,7 @@ const Hero = ({ data, query, variables }: HeroProps = {}) => {
             additional_data:
               data.additional_data as HeroContent["additional_data"],
           });
+          setIsLoading(false);
         } else {
           console.info("No hero content found in database, using fallback");
           setFallbackContent();
@@ -119,29 +153,6 @@ const Hero = ({ data, query, variables }: HeroProps = {}) => {
         console.warn("Failed to fetch hero content (using fallback):", err instanceof Error ? err.message : String(err));
         setFallbackContent();
       }
-    };
-
-    const setFallbackContent = () => {
-      setContent({
-        title: "Wholesale Trimless Channel Letters &",
-        subtitle: "Cast Block Acrylic",
-        description:
-          "UL-listed trimless channel letters and precision-cut cast block acrylic letters. German engineering precision meets Florida speed - serving sign companies across USA and Canada.",
-        image_url: "/lovable-uploads/b65672d5-65aa-4d28-b91a-f20d6649be08.png",
-        button_text: "Request Wholesale Quote",
-        button_url: "/contact",
-        additional_data: {
-          tagline: "Engineered for Sign Professionals",
-          secondaryButtonText: "View Product Catalog",
-          secondaryButtonUrl: "/products",
-          stats: [
-            { icon: "Factory", value: "25+ Years", label: "Manufacturing" },
-            { icon: "Truck", value: "24-48h", label: "Quote Response" },
-            { icon: "Award", value: "UL Listed", label: "Components" },
-            { icon: "Zap", value: "LED", label: "Efficient Lighting" },
-          ],
-        },
-      });
     };
 
     fetchHeroContent();
