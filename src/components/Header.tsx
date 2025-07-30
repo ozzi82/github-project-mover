@@ -135,8 +135,8 @@ const Header = () => {
                   key={item.name}
                   to={item.href}
                   className={`transition-colors ${
-                    isActive(item.href) 
-                      ? "text-primary font-medium" 
+                    isActive(item.href)
+                      ? "text-primary font-medium"
                       : "text-foreground hover:text-primary"
                   }`}
                   onClick={() => setIsMenuOpen(false)}
@@ -144,6 +144,39 @@ const Header = () => {
                   {item.name}
                 </Link>
               ))}
+
+              {/* Mobile Products Section */}
+              <div className="border-t border-border pt-4">
+                <Link
+                  to="/products"
+                  className={`transition-colors block mb-2 ${
+                    isActive("/products")
+                      ? "text-primary font-medium"
+                      : "text-foreground hover:text-primary"
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  All Products
+                </Link>
+                {groupedProducts.map((group) => (
+                  <div key={group.category} className="ml-4 mb-3">
+                    <div className="text-xs font-semibold text-muted-foreground mb-1">
+                      {group.category}
+                    </div>
+                    {group.products.map((product) => (
+                      <Link
+                        key={product.id}
+                        to={`/products/${product.id}`}
+                        className="block text-sm text-muted-foreground hover:text-primary py-1"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {product.title}
+                      </Link>
+                    ))}
+                  </div>
+                ))}
+              </div>
+
               <Button variant="cta" size="sm" className="self-start" asChild>
                 <Link to="/contact">Get Quote</Link>
               </Button>
