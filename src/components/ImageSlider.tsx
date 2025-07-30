@@ -46,41 +46,14 @@ const ImageSlider = ({ dayImage, nightImage, productTitle }: ImageSliderProps) =
           }`}
         />
 
-        {/* Left-to-Right Sliding Overlay */}
+        {/* Fast Black Sliding Overlay */}
         {isTransitioning && (
-          <>
-            {/* Sliding curtain effect */}
-            <div className={`absolute inset-0 z-20 bg-gradient-to-r from-primary via-accent to-primary transform transition-transform duration-1200 ease-in-out ${
-              isTransitioning
-                ? 'translate-x-0'
-                : '-translate-x-full'
-            }`}
+          <div
+            className="absolute inset-0 z-20 bg-black transform"
             style={{
-              animation: isTransitioning ? 'slideReveal 1.2s ease-in-out' : undefined
+              animation: 'fastSlideReveal 0.5s ease-in-out'
             }}
-            />
-
-            {/* Sparkling overlay effect */}
-            <div className="absolute inset-0 z-30 pointer-events-none">
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <div className="flex items-center justify-center">
-                  <div className="relative">
-                    <Zap className="w-12 h-12 text-yellow-300 animate-pulse" />
-                    <div className="absolute inset-0 w-12 h-12 animate-ping">
-                      <Zap className="w-12 h-12 text-yellow-300/50" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Moving light streaks */}
-              <div className="absolute inset-0 overflow-hidden">
-                <div className={`h-full bg-gradient-to-r from-transparent via-white/20 to-transparent transform transition-transform duration-1000 ${
-                  isTransitioning ? 'translate-x-full' : '-translate-x-full'
-                }`} style={{ width: '200%', marginLeft: '-50%' }} />
-              </div>
-            </div>
-          </>
+          />
         )}
 
         {/* View Indicator */}
