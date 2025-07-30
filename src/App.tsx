@@ -27,6 +27,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/products/:productId" element={<ProductDetail />} />
           <Route path="/trimless-channel-letters" element={<TrimlessChannelLetters />} />
           <Route path="/cast-block-acrylic-letters" element={<CastBlockAcrylicLetters />} />
           <Route path="/trimless-vs-trim-cap-letters" element={<TrimlessVsTrimCap />} />
