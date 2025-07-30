@@ -54,8 +54,8 @@ const Header = () => {
                 key={item.name}
                 to={item.href}
                 className={`relative py-3 px-2 transition-all duration-300 group text-lg ${
-                  isActive(item.href) 
-                    ? "text-primary font-semibold" 
+                  isActive(item.href)
+                    ? "text-primary font-semibold"
                     : "text-foreground hover:text-primary font-medium"
                 }`}
               >
@@ -65,6 +65,53 @@ const Header = () => {
                 }`} />
               </Link>
             ))}
+
+            {/* Products Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="ghost"
+                  className={`relative py-3 px-2 transition-all duration-300 group text-lg h-auto bg-transparent hover:bg-transparent ${
+                    isActive("/products")
+                      ? "text-primary font-semibold"
+                      : "text-foreground hover:text-primary font-medium"
+                  }`}
+                >
+                  Products
+                  <ChevronDown className="w-4 h-4 ml-1" />
+                  <span className={`absolute bottom-0 left-0 h-1 bg-gradient-primary transition-all duration-300 rounded-full ${
+                    isActive("/products") ? "w-full" : "w-0 group-hover:w-full"
+                  }`} />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-64 p-2" align="start">
+                <DropdownMenuItem asChild>
+                  <Link to="/products" className="w-full font-medium">
+                    All Products
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                {groupedProducts.map((group) => (
+                  <div key={group.category}>
+                    <DropdownMenuLabel className="text-xs font-semibold text-muted-foreground">
+                      {group.category}
+                    </DropdownMenuLabel>
+                    {group.products.map((product) => (
+                      <DropdownMenuItem key={product.id} asChild>
+                        <Link
+                          to={`/products/${product.id}`}
+                          className="w-full text-sm pl-4"
+                        >
+                          {product.title}
+                        </Link>
+                      </DropdownMenuItem>
+                    ))}
+                    <DropdownMenuSeparator />
+                  </div>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
             <Button variant="cta" size="lg" className="apple-glow px-8 py-3 text-lg font-semibold" asChild>
               <Link to="/contact">Get Quote</Link>
             </Button>
