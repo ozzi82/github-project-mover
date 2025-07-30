@@ -78,7 +78,7 @@ const ProductDetail = () => {
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           {/* Back Button */}
-          <Button variant="ghost" className="mb-8" asChild>
+          <Button variant="ghost" className="mb-8 animate-fade-in" asChild>
             <Link to="/products">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Products
@@ -87,7 +87,7 @@ const ProductDetail = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Left Column - Images */}
-            <div>
+            <div className="animate-fade-in" style={{ animationDelay: '0.1s' }}>
               <ImageSlider
                 dayImage={product.dayImage}
                 nightImage={product.nightImage}
@@ -96,7 +96,7 @@ const ProductDetail = () => {
             </div>
 
             {/* Right Column - Product Info */}
-            <div className="space-y-8">
+            <div className="space-y-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
               {/* Product Header */}
               <div>
                 <div className="flex flex-wrap gap-2 mb-4">
