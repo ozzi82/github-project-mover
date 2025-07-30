@@ -105,7 +105,7 @@ const Hero = ({ data, query, variables }: HeroProps = {}) => {
               data.additional_data as HeroContent["additional_data"],
           });
         } else {
-          console.error("Error fetching hero content:", error);
+          console.error("Error fetching hero content:", error?.message || error);
           setFallbackContent();
         }
       } catch (err) {
