@@ -18,10 +18,14 @@ const Header = () => {
 
   const navItems = [
     { name: "Home", href: "/" },
-    { name: "Products", href: "/products" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" }
   ];
+
+  const groupedProducts = getAllCategories().map(category => ({
+    category,
+    products: products.filter(product => product.category === category)
+  }));
 
   const isActive = (href: string) => {
     if (href === "/") {
