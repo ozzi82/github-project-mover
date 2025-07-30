@@ -28,27 +28,60 @@ const ImageSlider = ({ dayImage, nightImage, productTitle }: ImageSliderProps) =
     <div className="relative w-full">
       {/* Image Container */}
       <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-border shadow-xl bg-gradient-to-br from-muted/50 to-muted/20">
-        {/* Background overlay for transition effect */}
-        <div className={`absolute inset-0 bg-black/20 transition-opacity duration-300 ${isTransitioning ? 'opacity-100' : 'opacity-0'}`} />
 
-        {/* Lightning effect during transition */}
-        {isTransitioning && (
-          <div className="absolute inset-0 flex items-center justify-center z-10">
-            <div className="bg-white/20 backdrop-blur-sm rounded-full p-3 animate-pulse">
-              <Zap className="w-8 h-8 text-yellow-400 animate-bounce" />
-            </div>
-          </div>
-        )}
-
+        {/* Both images - positioned absolutely for smooth transition */}
         <img
-          src={currentView === 'day' ? dayImage : nightImage}
-          alt={`${productTitle} - ${currentView === 'day' ? 'Day View' : 'Night View'}`}
-          className={`w-full h-full object-cover transition-all duration-500 transform ${
-            isTransitioning
-              ? 'scale-105 blur-sm opacity-70'
-              : 'scale-100 blur-0 opacity-100 hover:scale-102'
+          src={dayImage}
+          alt={`${productTitle} - Day View`}
+          className={`absolute inset-0 w-full h-full object-cover transition-all duration-300 ${
+            currentView === 'day' ? 'opacity-100' : 'opacity-0'
           }`}
         />
+
+        <img
+          src={nightImage}
+          alt={`${productTitle} - Night View`}
+          className={`absolute inset-0 w-full h-full object-cover transition-all duration-300 ${
+            currentView === 'night' ? 'opacity-100' : 'opacity-0'
+          }`}
+        />
+
+        {/* Left-to-Right Sliding Overlay */}
+        {isTransitioning && (
+          <>
+            {/* Sliding curtain effect */}
+            <div className={`absolute inset-0 z-20 bg-gradient-to-r from-primary via-accent to-primary transform transition-transform duration-1200 ease-in-out ${
+              isTransitioning
+                ? 'translate-x-0'
+                : '-translate-x-full'
+            }`}
+            style={{
+              animation: isTransitioning ? 'slideReveal 1.2s ease-in-out' : undefined
+            }}
+            />
+
+            {/* Sparkling overlay effect */}
+            <div className="absolute inset-0 z-30 pointer-events-none">
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <div className="flex items-center justify-center">
+                  <div className="relative">
+                    <Zap className="w-12 h-12 text-yellow-300 animate-pulse" />
+                    <div className="absolute inset-0 w-12 h-12 animate-ping">
+                      <Zap className="w-12 h-12 text-yellow-300/50" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Moving light streaks */}
+              <div className="absolute inset-0 overflow-hidden">
+                <div className={`h-full bg-gradient-to-r from-transparent via-white/20 to-transparent transform transition-transform duration-1000 ${
+                  isTransitioning ? 'translate-x-full' : '-translate-x-full'
+                }`} style={{ width: '200%', marginLeft: '-50%' }} />
+              </div>
+            </div>
+          </>
+        )}
 
         {/* View Indicator */}
         <div className={`absolute top-4 left-4 bg-background/90 backdrop-blur-md rounded-full px-4 py-2 border border-border/50 shadow-lg transition-all duration-300 ${
