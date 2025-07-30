@@ -17,11 +17,11 @@ const ImageSlider = ({ dayImage, nightImage, productTitle }: ImageSliderProps) =
 
     setIsTransitioning(true);
 
-    // After the slide animation completes, change the image and slide back
+    // Faster transition - change image in the middle of the swipe
     setTimeout(() => {
       setCurrentView(currentView === 'day' ? 'night' : 'day');
-      setTimeout(() => setIsTransitioning(false), 800);
-    }, 600);
+      setTimeout(() => setIsTransitioning(false), 200);
+    }, 250);
   };
 
   return (
