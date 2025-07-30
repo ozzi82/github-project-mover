@@ -36,14 +36,40 @@ const ProductDetail = () => {
       <Header />
       
       {/* Breadcrumb */}
-      <section className="pt-24 pb-8 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <Link to="/" className="hover:text-primary">Home</Link>
-            <span>/</span>
-            <Link to="/products" className="hover:text-primary">Products</Link>
-            <span>/</span>
-            <span className="text-foreground">{product.title}</span>
+      <section className="pt-24 pb-12 bg-gradient-to-r from-primary/5 via-background to-accent/5 relative overflow-hidden">
+        {/* Background Graphics */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-4 right-4 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-2 left-8 w-24 h-24 bg-accent/10 rounded-full blur-2xl"></div>
+          <div className="absolute top-8 left-1/3 w-16 h-16 bg-primary/5 rounded-full blur-xl"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="flex items-center gap-3 text-sm">
+            <Link
+              to="/"
+              className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium"
+            >
+              Home
+            </Link>
+            <span className="text-muted-foreground/60">›</span>
+            <Link
+              to="/products"
+              className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium"
+            >
+              Products
+            </Link>
+            <span className="text-muted-foreground/60">›</span>
+            <span className="text-foreground font-semibold bg-primary/10 px-3 py-1 rounded-full">
+              {product.title}
+            </span>
+          </div>
+
+          {/* Product Category Badge */}
+          <div className="mt-4">
+            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent/20 text-accent-foreground border border-accent/30">
+              {product.category}
+            </span>
           </div>
         </div>
       </section>
