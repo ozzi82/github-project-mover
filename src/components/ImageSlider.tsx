@@ -72,40 +72,63 @@ const ImageSlider = ({ dayImage, nightImage, productTitle }: ImageSliderProps) =
       </div>
 
       {/* Toggle Controls */}
-      <div className="flex justify-center mt-6">
-        <div className="bg-muted rounded-lg p-1 flex gap-1">
+      <div className="flex justify-center mt-8">
+        <div className="bg-muted/50 backdrop-blur-sm rounded-xl p-1.5 flex gap-1 border border-border/50 shadow-lg">
           <Button
             variant={currentView === 'day' ? 'default' : 'ghost'}
             size="sm"
-            onClick={() => setCurrentView('day')}
-            className="flex items-center gap-2"
+            onClick={() => toggleView()}
+            disabled={isTransitioning}
+            className={`flex items-center gap-2 transition-all duration-300 ${
+              currentView === 'day'
+                ? 'bg-yellow-500/90 hover:bg-yellow-500 text-white shadow-lg shadow-yellow-500/25'
+                : 'hover:bg-yellow-500/10 hover:text-yellow-600'
+            }`}
           >
-            <Sun className="w-4 h-4" />
+            <Sun className={`w-4 h-4 ${currentView === 'day' ? 'animate-pulse' : ''}`} />
             Day View
           </Button>
           <Button
             variant={currentView === 'night' ? 'default' : 'ghost'}
             size="sm"
-            onClick={() => setCurrentView('night')}
-            className="flex items-center gap-2"
+            onClick={() => toggleView()}
+            disabled={isTransitioning}
+            className={`flex items-center gap-2 transition-all duration-300 ${
+              currentView === 'night'
+                ? 'bg-slate-700 hover:bg-slate-600 text-blue-100 shadow-lg shadow-slate-700/25'
+                : 'hover:bg-slate-700/10 hover:text-slate-600'
+            }`}
           >
-            <Moon className="w-4 h-4" />
+            <Moon className={`w-4 h-4 ${currentView === 'night' ? 'animate-pulse' : ''}`} />
             Night View
           </Button>
         </div>
       </div>
 
-      {/* Slider Toggle Alternative */}
-      <div className="flex justify-center mt-4">
-        <div className="text-sm text-muted-foreground">
-          <Button
-            variant="link"
-            onClick={toggleView}
-            className="p-0 h-auto text-primary hover:text-primary/80"
-          >
-            Switch to {currentView === 'day' ? 'Night' : 'Day'} View →
-          </Button>
-        </div>
+      {/* Quick Toggle with Animation */}
+      <div className="flex justify-center mt-6">
+        <Button
+          variant="outline"
+          onClick={toggleView}
+          disabled={isTransitioning}
+          className="group relative overflow-hidden bg-gradient-to-r from-primary/5 to-accent/5 hover:from-primary/10 hover:to-accent/10 border-primary/20 hover:border-primary/40 transition-all duration-300"
+        >
+          <div className="flex items-center gap-2">
+            <span className="text-sm font-medium">
+              {isTransitioning ? 'Switching...' : `Switch to ${currentView === 'day' ? 'Night' : 'Day'} View`}
+            </span>
+            {isTransitioning ? (
+              <Zap className="w-4 h-4 text-yellow-500 animate-spin" />
+            ) : (
+              <div className={`transition-transform duration-300 ${currentView === 'day' ? 'rotate-0' : 'rotate-180'}`}>
+                →
+              </div>
+            )}
+          </div>
+
+          {/* Hover effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+        </Button>
       </div>
     </div>
   );
