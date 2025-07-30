@@ -148,10 +148,15 @@ const ProductDetail = () => {
           </div>
 
           {/* Technical Specifications */}
-          <div className="mt-16">
-            <Card>
+          <div className="mt-16 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            <Card className="shadow-xl border-border/50 bg-gradient-to-br from-card to-card/50">
               <CardHeader>
-                <CardTitle className="text-2xl">Technical Specifications</CardTitle>
+                <CardTitle className="text-2xl flex items-center gap-2">
+                  <div className="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center">
+                    <div className="w-3 h-3 bg-primary rounded-full"></div>
+                  </div>
+                  Technical Specifications
+                </CardTitle>
                 <CardDescription>
                   Detailed technical information and specifications
                 </CardDescription>
@@ -159,11 +164,11 @@ const ProductDetail = () => {
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {Object.entries(product.specifications).map(([key, value], idx) => (
-                    <div key={idx} className="space-y-2">
+                    <div key={idx} className="space-y-2 group">
                       <div className="flex justify-between items-start">
-                        <span className="font-medium text-foreground">{key}:</span>
+                        <span className="font-medium text-foreground group-hover:text-primary transition-colors duration-200">{key}:</span>
                       </div>
-                      <p className="text-sm text-muted-foreground pl-4 border-l-2 border-primary/20">
+                      <p className="text-sm text-muted-foreground pl-4 border-l-2 border-primary/20 group-hover:border-primary/40 transition-colors duration-200">
                         {value}
                       </p>
                       {idx < Object.entries(product.specifications).length - 1 && (
@@ -177,21 +182,21 @@ const ProductDetail = () => {
           </div>
 
           {/* Call to Action */}
-          <div className="mt-16 text-center">
-            <Card className="bg-gradient-card">
+          <div className="mt-16 text-center animate-fade-in" style={{ animationDelay: '0.5s' }}>
+            <Card className="bg-gradient-to-br from-primary/5 via-background to-accent/5 shadow-xl border-primary/20">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold text-foreground mb-4">
                   Ready to Order {product.title}?
                 </h3>
                 <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                  Get wholesale pricing and professional drawings. Our team provides 
+                  Get wholesale pricing and professional drawings. Our team provides
                   24-48 hour quotes with complete technical specifications.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button size="lg" asChild>
+                  <Button size="lg" className="apple-glow" asChild>
                     <Link to="/contact">Request Wholesale Quote</Link>
                   </Button>
-                  <Button variant="outline" size="lg" asChild>
+                  <Button variant="outline" size="lg" className="border-primary/30 hover:border-primary/50" asChild>
                     <Link to="/products">View All Products</Link>
                   </Button>
                 </div>
