@@ -89,7 +89,7 @@ const ImageSlider = ({ dayImage, nightImage, productTitle }: ImageSliderProps) =
             size="sm"
             onClick={() => toggleView()}
             disabled={isTransitioning}
-            className={`flex items-center gap-2 transition-all duration-300 ${
+            className={`flex items-center gap-2 transition-all duration-200 ${
               currentView === 'day'
                 ? 'bg-yellow-500/90 hover:bg-yellow-500 text-white shadow-lg shadow-yellow-500/25'
                 : 'hover:bg-yellow-500/10 hover:text-yellow-600'
