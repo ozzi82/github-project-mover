@@ -163,12 +163,12 @@ const Hero = ({ data, query, variables }: HeroProps = {}) => {
     return icons[iconName as keyof typeof icons] || Factory;
   };
 
-  if (!content) {
+  if (isLoading || !content) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-background via-background/95 to-background">
         <div className="text-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-muted-foreground">Loading...</p>
+          <p className="text-muted-foreground">Loading hero content...</p>
         </div>
       </div>
     );
