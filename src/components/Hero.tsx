@@ -216,19 +216,19 @@ const Hero = ({ data, query, variables }: HeroProps = {}) => {
       >
         <div className="bg-background/60 backdrop-blur-md rounded-2xl border border-white/20 shadow-xl p-4 md:p-6 max-w-md w-full m-4 mr-8">
           <div className="animate-fade-in">
-            <h1 className="text-3xl lg:text-5xl font-bold text-white mb-4 leading-tight drop-shadow-lg">
+            <h1 className="text-2xl lg:text-4xl font-bold text-white mb-3 leading-tight drop-shadow-lg">
               {content.title}
-              <span className="block text-4xl lg:text-6xl mt-1 bg-gradient-to-r from-accent to-orange-400 bg-clip-text text-transparent font-extrabold drop-shadow-lg">
+              <span className="block text-3xl lg:text-5xl mt-1 bg-gradient-to-r from-accent to-orange-400 bg-clip-text text-transparent font-extrabold drop-shadow-lg">
                 {content.subtitle}
               </span>
-              <span className="block text-base lg:text-xl mt-3 text-white/90 drop-shadow-md">
+              <span className="block text-sm lg:text-lg mt-2 text-white/90 drop-shadow-md">
                 {content.additional_data.tagline}
               </span>
             </h1>
           </div>
 
-          <div className="animate-fade-in mt-4">
-            <p className="text-base lg:text-lg text-white/80 mb-6 leading-relaxed drop-shadow-md">
+          <div className="animate-fade-in mt-3">
+            <p className="text-sm lg:text-base text-white/80 mb-4 leading-relaxed drop-shadow-md">
               {content.description}
             </p>
           </div>
