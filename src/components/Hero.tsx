@@ -247,8 +247,8 @@ const Hero = ({ data, query, variables }: HeroProps = {}) => {
             </Button>
             <Button
               variant="outline"
-              size="lg"
-              className="text-base px-6 py-4 bg-white/10 border-white/30 text-white hover:bg-white/20 font-semibold"
+              size="md"
+              className="text-sm px-4 py-3 bg-white/10 border-white/30 text-white hover:bg-white/20 font-semibold"
               asChild
             >
               <Link to={content.additional_data.secondaryButtonUrl}>
