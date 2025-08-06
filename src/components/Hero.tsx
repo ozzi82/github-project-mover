@@ -214,7 +214,7 @@ const Hero = ({ data, query, variables }: HeroProps = {}) => {
           backgroundSize: "cover",
         }}
       >
-        <div className="bg-background/60 backdrop-blur-md rounded-2xl border border-white/20 shadow-xl p-6 md:p-10 max-w-xl w-full m-5 mr-12">
+        <div className="bg-background/60 backdrop-blur-md rounded-2xl border border-white/20 shadow-xl p-4 md:p-6 max-w-md w-full m-4 mr-8">
           <div className="animate-fade-in">
             <h1 className="text-3xl lg:text-5xl font-bold text-white mb-4 leading-tight drop-shadow-lg">
               {content.title}
