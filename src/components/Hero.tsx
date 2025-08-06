@@ -59,6 +59,7 @@ interface HeroProps {
 const Hero = ({ data, query, variables }: HeroProps = {}) => {
   const [content, setContent] = useState<HeroContent | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   // Use Tina if data is available, otherwise fallback to Supabase
   const tinaProps = data ? { data, query, variables } : null;
