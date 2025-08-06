@@ -104,8 +104,8 @@ export const products: Product[] = [
     id: "edgeluxe-lp1",
     title: "EdgeLuxe LP 1",
     description: "Flat Cutout Letters (FCO) in wood, aluminum, stainless steel, acrylic and many more",
-    dayImage: "/placeholder.svg",
-    nightImage: "/placeholder.svg",
+    dayImage: "https://cdn.builder.io/api/v1/image/assets%2F91c68b23f3a04bf5a94564bf5338d5e4%2Fd3bec7c89f4342ec8a053e7cddbaffcc?format=webp&width=800",
+    nightImage: "https://cdn.builder.io/api/v1/image/assets%2F91c68b23f3a04bf5a94564bf5338d5e4%2F48f6174b688641c79080d3cc0f0bfc32?format=webp&width=800",
     specifications: {
       Materials: "Wood, aluminum, stainless steel, acrylic and many more",
       Thickness: '1mm (0.039") to 200mm (7.87")',
