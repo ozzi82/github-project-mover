@@ -75,8 +75,8 @@ export const products: Product[] = [
     id: "edgeluxe-lp32",
     title: "EdgeLuxe LP 3.2",
     description: "Fabricated Stainless Steel flush-mount with partial side-lit halo effect",
-    dayImage: "/placeholder.svg",
-    nightImage: "/placeholder.svg",
+    dayImage: "https://cdn.builder.io/api/v1/image/assets%2F91c68b23f3a04bf5a94564bf5338d5e4%2Fd3bec7c89f4342ec8a053e7cddbaffcc?format=webp&width=800",
+    nightImage: "https://cdn.builder.io/api/v1/image/assets%2F91c68b23f3a04bf5a94564bf5338d5e4%2F48f6174b688641c79080d3cc0f0bfc32?format=webp&width=800",
     specifications: {
       Materials: "Fabricated Stainless Steel",
       Illumination: "Flush-mount partial side-lit halo",
