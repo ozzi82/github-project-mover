@@ -179,10 +179,27 @@ const Hero = ({ data, query, variables }: HeroProps = {}) => {
     <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
       {/* Background image */}
       <div className="absolute inset-0">
+        {/* Image Loading Skeleton */}
+        {!imageLoaded && (
+          <div className="absolute inset-0 bg-gradient-to-br from-muted/80 via-muted/60 to-muted/40 animate-pulse">
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-ping" />
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <div className="flex flex-col items-center gap-4">
+                <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+                <p className="text-sm text-muted-foreground font-medium">Loading...</p>
+              </div>
+            </div>
+          </div>
+        )}
+
         <img
           src={content.image_url}
           alt="Professional channel letter manufacturing facility"
-          className="w-full h-full object-cover object-left"
+          className={`w-full h-full object-cover object-left transition-opacity duration-500 ${
+            imageLoaded ? 'opacity-100' : 'opacity-0'
+          }`}
+          onLoad={() => setImageLoaded(true)}
+          onError={() => setImageLoaded(true)} // Show content even if image fails
         />
       </div>
 
