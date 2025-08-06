@@ -15,8 +15,8 @@ export const products: Product[] = [
     id: "edgeluxe-lp5",
     title: "EdgeLuxe LP 5",
     description: "Trimless Fabricated Stainless Steel Letters with face-lit illumination",
-    dayImage: "/placeholder.svg",
-    nightImage: "/placeholder.svg",
+    dayImage: "https://cdn.builder.io/api/v1/image/assets%2F91c68b23f3a04bf5a94564bf5338d5e4%2Fd3bec7c89f4342ec8a053e7cddbaffcc?format=webp&width=800",
+    nightImage: "https://cdn.builder.io/api/v1/image/assets%2F91c68b23f3a04bf5a94564bf5338d5e4%2F48f6174b688641c79080d3cc0f0bfc32?format=webp&width=800",
     specifications: {
       Materials: "Thick gauge stainless steel returns and back welded together, step-router acrylic face trim-less",
       Illumination: "Face-lit",
