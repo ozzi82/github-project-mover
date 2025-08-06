@@ -242,38 +242,13 @@ All colors MUST be HSL.
   }
 
   .apple-glow-secondary {
-    position: relative;
-    box-shadow: 
-      0 0 20px hsl(var(--primary-glow) / 0.3),
-      0 0 40px hsl(var(--primary-glow) / 0.2),
-      0 8px 32px hsl(var(--primary-glow) / 0.2);
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    border: 2px solid hsl(var(--primary-glow) / 0.3);
-  }
-
-  .apple-glow-secondary::before {
-    content: '';
-    position: absolute;
-    inset: -2px;
-    background: linear-gradient(45deg, 
-      hsl(var(--primary-glow)),
-      hsl(var(--accent) / 0.7),
-      hsl(var(--primary-glow)),
-      hsl(var(--accent) / 0.7)
-    );
-    background-size: 400% 400%;
-    border-radius: inherit;
-    z-index: -1;
-    animation: glow-border 4s ease infinite;
-    opacity: 0.6;
+    border: 2px solid hsl(var(--primary));
+    transition: border-color 0.2s ease, background-color 0.2s ease;
   }
 
   .apple-glow-secondary:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 
-      0 0 40px hsl(var(--primary-glow) / 0.6),
-      0 0 80px hsl(var(--primary-glow) / 0.4),
-      0 20px 60px hsl(var(--primary-glow) / 0.4);
+    border-color: hsl(var(--primary-glow));
+    background-color: hsl(var(--primary) / 0.05);
   }
 
     @keyframes glow-border {
