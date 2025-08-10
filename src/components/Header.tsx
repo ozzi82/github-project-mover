@@ -16,6 +16,18 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
+  // Suppress ResizeObserver errors from dropdown
+  useEffect(() => {
+    const handleResizeObserverError = (e: ErrorEvent) => {
+      if (e.message.includes('ResizeObserver loop')) {
+        e.stopImmediatePropagation();
+      }
+    };
+
+    window.addEventListener('error', handleResizeObserverError);
+    return () => window.removeEventListener('error', handleResizeObserverError);
+  }, []);
+
   const navItems = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
