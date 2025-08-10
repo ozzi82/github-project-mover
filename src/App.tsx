@@ -39,26 +39,28 @@ if (typeof window !== 'undefined') {
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/products/:productId" element={<ProductDetail />} />
-          <Route path="/trimless-channel-letters" element={<TrimlessChannelLetters />} />
-          <Route path="/cast-block-acrylic-letters" element={<CastBlockAcrylicLetters />} />
-          <Route path="/trimless-vs-trim-cap-letters" element={<TrimlessVsTrimCap />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/admin" element={<Admin />} />
-          <Route path="/auth" element={<Auth />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <FloatingCTA />
-      </BrowserRouter>
+      <ErrorBoundary>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/products/:productId" element={<ProductDetail />} />
+            <Route path="/trimless-channel-letters" element={<TrimlessChannelLetters />} />
+            <Route path="/cast-block-acrylic-letters" element={<CastBlockAcrylicLetters />} />
+            <Route path="/trimless-vs-trim-cap-letters" element={<TrimlessVsTrimCap />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/admin" element={<Admin />} />
+            <Route path="/auth" element={<Auth />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          <FloatingCTA />
+        </BrowserRouter>
+      </ErrorBoundary>
     </TooltipProvider>
   </QueryClientProvider>
 );
