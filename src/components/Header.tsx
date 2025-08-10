@@ -96,7 +96,12 @@ const Header = () => {
                   }`} />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-64 p-2" align="start">
+              <DropdownMenuContent
+                className="w-64 p-2 max-h-96 overflow-y-auto"
+                align="start"
+                sideOffset={4}
+                alignOffset={0}
+              >
                 <DropdownMenuItem asChild>
                   <Link to="/products" className="w-full font-medium">
                     All Products
