@@ -20,6 +20,21 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 console.log("App component loading");
+
+// Suppress ResizeObserver loop errors
+const resizeObserverErrorHandler = (e: ErrorEvent) => {
+  if (e.message === 'ResizeObserver loop completed with undelivered notifications.') {
+    e.stopImmediatePropagation();
+    return false;
+  }
+  return true;
+};
+
+// Add global error handler for ResizeObserver
+if (typeof window !== 'undefined') {
+  window.addEventListener('error', resizeObserverErrorHandler);
+}
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
