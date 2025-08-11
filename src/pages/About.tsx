@@ -69,18 +69,18 @@ const About = () => {
               <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
                 Our Story
               </h2>
-              <p className="text-lg text-muted-foreground mb-6">
-                Founded in 1999, Sunlite Signs began as a small fabrication shop with a simple mission: 
-                create the highest quality channel letters and signage products for the sign industry.
-              </p>
-              <p className="text-lg text-muted-foreground mb-6">
-                Over 25 years, we've grown into one of North America's leading wholesale signage manufacturers, 
-                pioneering innovations like true trimless channel letters and advanced LED integration systems.
-              </p>
-              <p className="text-lg text-muted-foreground mb-8">
-                Today, we serve over 2,500 sign companies across the USA and Canada, maintaining our commitment 
-                to quality, innovation, and the partnerships that built our success.
-              </p>
+              <p className="text-lg text-muted-foreground mb-6">EUROPEAN PRECISION
+The German roots of Sunlite Signs Wholesale (along with sister company LKF Lichtwerbung based in Nuremberg, Germany) focus on stylish German-engineered precision in LED-illuminated signage form factors that offer an upscale precision feel to inspirationally designed environments.
+
+Now, Sunlite Signs Wholesale is offering innovative German-engineered UL-Listed LED-illuminated signage solutions that emphasize low-profile and trim-less edge designs in demand by architects and designers today.
+
+With letters as tiny as 2” tall, Sunlite Signs EdgeLuxe LP 11 solid-state precision-illuminated letterforms offer illumination diffusion in a small form factor that looks great close-up.
+
+Meanwhile, Sunlite Signs EdgeLuxe LP 5 trim-less precision-fabricated stainless steel channel letters offer a crisp, low-profile look at a larger scale for building façade and canopy signage applications.
+
+Whatever your showcase product, brand, or experience, our letters are sure to elevate your clients’ experiences. Keep this handy reference guide for the most common European signage form factors.</p>
+              
+              
               
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center p-4 bg-muted/30 rounded-lg">
