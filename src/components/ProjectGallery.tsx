@@ -85,59 +85,11 @@ const ProjectGallery = () => {
 
         {/* Category Filter */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {categories.map(category => <Badge key={category.id} variant="secondary" className="px-4 py-2 text-sm">
-              {category.name} ({category.count})
-            </Badge>)}
+          {categories.map(category => {})}
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {projects.map(project => <Card key={project.id} className="bg-card shadow-card hover:shadow-hero transition-all duration-300 border-border overflow-hidden group">
-              <div className="aspect-[4/3] overflow-hidden relative">
-                <img src={project.image} alt={`${project.title} - ${project.type} installation showcasing professional signage manufacturing`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <Button variant="secondary" size="sm">
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    View Details
-                  </Button>
-                </div>
-              </div>
-              
-              <CardHeader>
-                <div className="flex justify-between items-start mb-2">
-                  <div className="flex-1">
-                    <CardTitle className="text-xl font-semibold text-foreground mb-1">
-                      {project.title}
-                    </CardTitle>
-                    <div className="flex items-center text-sm text-muted-foreground mb-2">
-                      <MapPin className="w-3 h-3 mr-1" />
-                      {project.location}
-                    </div>
-                  </div>
-                  <Badge variant="outline" className="text-xs">
-                    {project.type}
-                  </Badge>
-                </div>
-                <CardDescription className="text-muted-foreground text-sm">
-                  {project.description}
-                </CardDescription>
-              </CardHeader>
-
-              <CardContent>
-                <div className="space-y-4">
-                  {/* Features */}
-                  <div>
-                    <h5 className="font-medium text-foreground mb-2 text-sm">Project Highlights</h5>
-                    <div className="grid grid-cols-2 gap-1">
-                      {project.features.map((feature, idx) => <div key={idx} className="text-xs text-muted-foreground">
-                          • {feature}
-                        </div>)}
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>)}
-        </div>
+        
 
         {/* CTA */}
         <div className="text-center">

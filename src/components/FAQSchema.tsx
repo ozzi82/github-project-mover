@@ -63,43 +63,8 @@ const FAQSchema = () => {
 
             {/* Resource Hub */}
             <div className="mt-16">
-              <h3 className="text-3xl font-bold text-foreground mb-8 text-center">
-                Technical Resources
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <Card className="bg-card shadow-card border-border hover:shadow-hero transition-all duration-300">
-                  <CardContent className="p-6 text-center">
-                    <Download className="w-8 h-8 text-primary mx-auto mb-4" />
-                    <h4 className="font-semibold text-foreground mb-2">Installation Guides</h4>
-                    <p className="text-sm text-muted-foreground mb-4">Step-by-step PDF installation instructions</p>
-                    <span className="text-xs text-primary font-medium">PDF Download</span>
-                  </CardContent>
-                </Card>
-                <Card className="bg-card shadow-card border-border hover:shadow-hero transition-all duration-300">
-                  <CardContent className="p-6 text-center">
-                    <FileText className="w-8 h-8 text-primary mx-auto mb-4" />
-                    <h4 className="font-semibold text-foreground mb-2">UL Certificates</h4>
-                    <p className="text-sm text-muted-foreground mb-4">UL 48 listing documentation</p>
-                    <span className="text-xs text-primary font-medium">PDF Download</span>
-                  </CardContent>
-                </Card>
-                <Card className="bg-card shadow-card border-border hover:shadow-hero transition-all duration-300">
-                  <CardContent className="p-6 text-center">
-                    <Zap className="w-8 h-8 text-primary mx-auto mb-4" />
-                    <h4 className="font-semibold text-foreground mb-2">Photometric Data</h4>
-                    <p className="text-sm text-muted-foreground mb-4">LED performance specifications</p>
-                    <span className="text-xs text-primary font-medium">PDF Download</span>
-                  </CardContent>
-                </Card>
-                <Card className="bg-card shadow-card border-border hover:shadow-hero transition-all duration-300">
-                  <CardContent className="p-6 text-center">
-                    <CheckCircle className="w-8 h-8 text-primary mx-auto mb-4" />
-                    <h4 className="font-semibold text-foreground mb-2">CAD Blocks</h4>
-                    <p className="text-sm text-muted-foreground mb-4">DWG and STEP files for design</p>
-                    <span className="text-xs text-primary font-medium">ZIP Download</span>
-                  </CardContent>
-                </Card>
-              </div>
+              
+              
             </div>
           </div>
         </div>

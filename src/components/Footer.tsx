@@ -45,16 +45,13 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-accent" />
-                <span className="text-primary-foreground/80 text-sm">1-800-PRO-SIGN</span>
+                <span className="text-primary-foreground/80 text-sm">689-294-0912</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-accent" />
-                <span className="text-primary-foreground/80 text-sm">orders@prosignmfg.com</span>
+                <span className="text-primary-foreground/80 text-sm">hello@sunlitesigns.com</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <MapPin className="w-4 h-4 text-accent" />
-                <span className="text-primary-foreground/80 text-sm">Industrial Park, Manufacturing City</span>
-              </div>
+              
             </div>
           </div>
 
@@ -102,12 +99,8 @@ const Footer = () => {
               <Link to="/privacy" className="text-primary-foreground/60 hover:text-accent transition-colors">
                 Privacy Policy
               </Link>
-              <Link to="/terms" className="text-primary-foreground/60 hover:text-accent transition-colors">
-                Terms of Service
-              </Link>
-              <Link to="/warranty" className="text-primary-foreground/60 hover:text-accent transition-colors">
-                Product Warranty
-              </Link>
+              
+              
             </div>
           </div>
         </div>
