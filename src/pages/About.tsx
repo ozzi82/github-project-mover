@@ -70,28 +70,19 @@ const About = () => {
                 Our Story
               </h2>
               <p className="text-lg text-muted-foreground mb-6">EUROPEAN PRECISION
-The German roots of Sunlite Signs Wholesale (along with sister company LKF Lichtwerbung based in Nuremberg, Germany) focus on stylish German-engineered precision in LED-illuminated signage form factors that offer an upscale precision feel to inspirationally designed environments.
 
-Now, Sunlite Signs Wholesale is offering innovative German-engineered UL-Listed LED-illuminated signage solutions that emphasize low-profile and trim-less edge designs in demand by architects and designers today.
 
-With letters as tiny as 2” tall, Sunlite Signs EdgeLuxe LP 11 solid-state precision-illuminated letterforms offer illumination diffusion in a small form factor that looks great close-up.
-
-Meanwhile, Sunlite Signs EdgeLuxe LP 5 trim-less precision-fabricated stainless steel channel letters offer a crisp, low-profile look at a larger scale for building façade and canopy signage applications.
-
-Whatever your showcase product, brand, or experience, our letters are sure to elevate your clients’ experiences. Keep this handy reference guide for the most common European signage form factors.</p>
+The German roots of Sunlite Signs Wholesale (along with sister company LKF Lichtwerbung based in Nuremberg, Germany) focus on stylish German-engineered precision in LED-illuminated signage form factors that offer an upscale precision feel to inspirationally designed environments. Now, Sunlite Signs Wholesale is offering innovative German-engineered UL-Listed LED-illuminated signage solutions that emphasize low-profile and trim-less edge designs in demand by architects and designers today. With letters as tiny as 2” tall, Sunlite Signs EdgeLuxe LP 11 solid-state precision-illuminated letterforms offer illumination diffusion in a small form factor that looks great close-up. Meanwhile, Sunlite Signs EdgeLuxe LP 5 trim-less precision-fabricated stainless steel channel letters offer a crisp, low-profile look at a larger scale for building façade and canopy signage applications. Whatever your showcase product, brand, or experience, our letters are sure to elevate your clients’ experiences. Keep this handy reference guide for the most common European signage form factors.</p>
+              <p className="text-lg text-muted-foreground mb-6">
+                Over 25 years, we've grown into one of North America's leading wholesale signage manufacturers, 
+                pioneering innovations like true trimless channel letters and advanced LED integration systems.
+              </p>
+              <p className="text-lg text-muted-foreground mb-8">
+                Today, we serve over 2,500 sign companies across the USA and Canada, maintaining our commitment 
+                to quality, innovation, and the partnerships that built our success.
+              </p>
               
               
-              
-              <div className="grid grid-cols-2 gap-6">
-                <div className="text-center p-4 bg-muted/30 rounded-lg">
-                  <div className="text-3xl font-bold text-primary">2,500+</div>
-                  <div className="text-sm text-muted-foreground">Sign Company Partners</div>
-                </div>
-                <div className="text-center p-4 bg-muted/30 rounded-lg">
-                  <div className="text-3xl font-bold text-primary">150,000+</div>
-                  <div className="text-sm text-muted-foreground">Projects Completed</div>
-                </div>
-              </div>
             </div>
 
             <div className="space-y-6">
@@ -111,35 +102,7 @@ Whatever your showcase product, brand, or experience, our letters are sure to el
       </section>
 
       {/* Manufacturing Capabilities */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Manufacturing Excellence
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
-              Advanced equipment, skilled craftspeople, and rigorous quality control processes 
-              ensure every product meets the highest industry standards.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {capabilities.map((capability, index) => <Card key={index} className="bg-card shadow-card border-border">
-                <CardContent className="p-8">
-                  <div className="text-primary mb-4">
-                    {capability.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-foreground mb-3">
-                    {capability.title}
-                  </h3>
-                  <p className="text-muted-foreground">
-                    {capability.description}
-                  </p>
-                </CardContent>
-              </Card>)}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Quality & Certifications */}
       <section className="py-20 bg-background">
@@ -160,22 +123,22 @@ Whatever your showcase product, brand, or experience, our letters are sure to el
                   <Shield className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="font-semibold text-foreground mb-2">UL Listed</h3>
-                <p className="text-sm text-muted-foreground">All LED components meet UL safety standards</p>
+                <p className="text-sm text-muted-foreground">All our signs meet UL safety standards</p>
               </div>
               
               <div className="text-center">
                 <div className="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <Award className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-2">ISO 9001</h3>
-                <p className="text-sm text-muted-foreground">Certified quality management system</p>
+                <h3 className="font-semibold text-foreground mb-2">24/48 hours</h3>
+                <p className="text-sm text-muted-foreground">That's our usual turnaround time for quotes</p>
               </div>
 
               <div className="text-center">
                 <div className="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <Clock className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-2">5 Year Warranty</h3>
+                <h3 className="font-semibold text-foreground mb-2">3 Year Warranty</h3>
                 <p className="text-sm text-muted-foreground">Comprehensive warranty on all LED systems</p>
               </div>
 
