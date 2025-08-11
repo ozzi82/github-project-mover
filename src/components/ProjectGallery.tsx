@@ -85,7 +85,12 @@ const ProjectGallery = () => {
 
         {/* Category Filter */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {categories.map(category => {})}
+            {categories.map((category) => (
+              <Button key={category.id} variant="outline" size="sm" className="gap-2">
+                {category.name}
+                <Badge variant="secondary">{category.count}</Badge>
+              </Button>
+            ))}
         </div>
 
         {/* Projects Grid */}
