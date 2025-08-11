@@ -88,9 +88,7 @@ const Footer = () => {
             <ul className="space-y-2 text-sm text-primary-foreground/80">
               <li>• United States (All 50 States)</li>
               <li>• Canada (All Provinces)</li>
-              <li>• Express Shipping Available</li>
-              <li>• White Glove Delivery</li>
-              <li>• Freight LTL Options</li>
+
             </ul>
           </div>
         </div>
