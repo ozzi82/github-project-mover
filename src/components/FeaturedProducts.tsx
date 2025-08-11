@@ -8,7 +8,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle, Star, Clock } from "lucide-react";
+import { ArrowRight, CheckCircle, Star, Clock, Truck, Shield } from "lucide-react";
 const plazaLettersImage =
   "https://cdn.builder.io/api/v1/image/assets%2F91c68b23f3a04bf5a94564bf5338d5e4%2F2f66ed09023d40b3b70fa7bf13e196fc";
 const haloLettersImage =
@@ -143,51 +143,51 @@ const FeaturedProducts = () => {
           ))}
         </div>
 
-        {/* Quick Stats */}
+        {/* Highlights - process style */}
         <div className="glass rounded-2xl p-10 border-border/50">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div className="text-center group">
-              <div className="bg-gradient-primary p-4 rounded-2xl w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform duration-300 bg-slate-50">
-                <Clock className="w-10 h-10 text-primary-foreground" />
-              </div>
-              <div className="text-3xl font-bold gradient-text mb-3">
-                24-48h
-              </div>
-              <div className="text-xl font-semibold text-foreground mb-3">
-                Quote Response
-              </div>
-              <div className="text-muted-foreground">
-                Fast quotes on all products
-              </div>
-            </div>
-            <div className="text-center group">
-              <div className="bg-gradient-accent p-4 rounded-2xl w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-accent group-hover:scale-110 transition-transform duration-300 bg-slate-100">
-                <CheckCircle className="w-10 h-10 text-accent-foreground" />
-              </div>
-              <div className="text-3xl font-bold gradient-text mb-3">
-                21 Days
-              </div>
-              <div className="text-xl font-semibold text-foreground mb-3">
-                Total Delivery
-              </div>
-              <div className="text-muted-foreground">
-                From art approval to your door
-              </div>
-            </div>
-            <div className="text-center group">
-              <div className="bg-gradient-primary p-4 rounded-2xl w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform duration-300">
-                <Star className="w-10 h-10 text-primary-foreground" />
-              </div>
-              <div className="text-3xl font-bold gradient-text mb-3">
-                3 Years
-              </div>
-              <div className="text-xl font-semibold text-foreground mb-3">
-                Warranty
-              </div>
-              <div className="text-muted-foreground">
-                Comprehensive coverage
-              </div>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+            {[
+              {
+                icon: Truck,
+                title: "Delivery",
+                desc: "From art approval to your dock in about 21 days.",
+                step: "01",
+              },
+              {
+                icon: Shield,
+                title: "3 year warranty",
+                desc: "LED-illuminated products and power supplies are covered.",
+                step: "02",
+              },
+              {
+                icon: Clock,
+                title: "Quotes in 24–48 hours",
+                desc: "Tailored quotes and drawings delivered fast.",
+                step: "03",
+              },
+              {
+                icon: CheckCircle,
+                title: "We are UL 48 Listed",
+                desc: "All products meet UL 48 electrical sign standards.",
+                step: "04",
+              },
+            ].map((item, idx) => {
+              const Icon = item.icon as any;
+              return (
+                <div key={idx} className="text-left">
+                  <div className="relative inline-block">
+                    <div className="w-16 h-16 rounded-lg border border-border/60 flex items-center justify-center bg-card">
+                      <Icon className="w-7 h-7 text-foreground" />
+                    </div>
+                    <div className="absolute -bottom-2 -right-2 w-8 h-8 rounded-full bg-accent text-accent-foreground text-xs font-semibold flex items-center justify-center shadow">
+                      {item.step}
+                    </div>
+                  </div>
+                  <h4 className="mt-5 text-lg font-semibold text-foreground">{item.title}</h4>
+                  <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{item.desc}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
 
