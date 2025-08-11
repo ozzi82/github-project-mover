@@ -1,53 +1,27 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle, Star, Clock, Truck, Shield } from "lucide-react";
-const plazaLettersImage =
-  "https://cdn.builder.io/api/v1/image/assets%2F91c68b23f3a04bf5a94564bf5338d5e4%2F2f66ed09023d40b3b70fa7bf13e196fc";
-const haloLettersImage =
-  "https://cdn.builder.io/api/v1/image/assets%2F91c68b23f3a04bf5a94564bf5338d5e4%2Fdc7335d63a994993b10b147eb551d888";
+import { ArrowRight, CheckCircle, Star, Clock } from "lucide-react";
+const plazaLettersImage = "https://cdn.builder.io/api/v1/image/assets%2F91c68b23f3a04bf5a94564bf5338d5e4%2F2f66ed09023d40b3b70fa7bf13e196fc";
+const haloLettersImage = "https://cdn.builder.io/api/v1/image/assets%2F91c68b23f3a04bf5a94564bf5338d5e4%2Fdc7335d63a994993b10b147eb551d888";
 const FeaturedProducts = () => {
-  const featuredProducts = [
-    {
-      id: "trimless-channel-letters",
-      image: plazaLettersImage,
-      title: "Trimless Channel Letters",
-      description:
-        "True trimless design with no visible seams - our signature product that outperforms traditional channel letters.",
-      features: [
-        "Flush-face design, no trim lines",
-        "UL listed LED modules included",
-        "Weather sealed construction",
-        "Custom fonts and sizes",
-        "3-year comprehensive warranty",
-      ],
-      highlight: true,
-      price: "Starting at $24/letter",
-    },
-    {
-      id: "halo-lit-letters",
-      image: haloLettersImage,
-      title: "Halo-Lit Channel Letters",
-      description:
-        "Premium halo-illuminated letters with beautiful warm backlighting effects - perfect for sophisticated architectural applications.",
-      features: [
-        "Even halo illumination effect",
-        "Multiple standoff heights available",
-        "Premium brushed or painted faces",
-        "Warm LED backlighting",
-        "Architectural quality finish",
-      ],
-    },
-  ];
-  return (
-    <section className="py-24 bg-gradient-surface relative overflow-hidden">
+  const featuredProducts = [{
+    id: "trimless-channel-letters",
+    image: plazaLettersImage,
+    title: "Trimless Channel Letters",
+    description: "True trimless design with no visible seams - our signature product that outperforms traditional channel letters.",
+    features: ["Flush-face design, no trim lines", "UL listed LED modules included", "Weather sealed construction", "Custom fonts and sizes", "3-year comprehensive warranty"],
+    highlight: true,
+    price: "Starting at $24/letter"
+  }, {
+    id: "halo-lit-letters",
+    image: haloLettersImage,
+    title: "Halo-Lit Channel Letters",
+    description: "Premium halo-illuminated letters with beautiful warm backlighting effects - perfect for sophisticated architectural applications.",
+    features: ["Even halo illumination effect", "Multiple standoff heights available", "Premium brushed or painted faces", "Warm LED backlighting", "Architectural quality finish"]
+  }];
+  return <section className="py-24 bg-gradient-surface relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
@@ -65,28 +39,14 @@ const FeaturedProducts = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
-          {featuredProducts.map((product, index) => (
-            <Card
-              key={index}
-              className={`group bg-gradient-card shadow-card hover:shadow-glow transition-all duration-500 border-border/50 overflow-hidden ${
-                product.highlight ? "ring-2 ring-primary/30 shadow-hero" : ""
-              } hover:scale-[1.02]`}
-            >
+          {featuredProducts.map((product, index) => <Card key={index} className={`group bg-gradient-card shadow-card hover:shadow-glow transition-all duration-500 border-border/50 overflow-hidden ${product.highlight ? "ring-2 ring-primary/30 shadow-hero" : ""} hover:scale-[1.02]`}>
               <div className="aspect-video overflow-hidden relative">
-                <img
-                  src={product.image}
-                  alt={product.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  style={{
-                    backgroundImage:
-                      index === 0
-                        ? "url(https://cdn.builder.io/api/v1/image/assets%2F91c68b23f3a04bf5a94564bf5338d5e4%2Fd9657f0406e64cb4a79cc1ce8cf8e68f)"
-                        : "url(https://cdn.builder.io/api/v1/image/assets%2F91c68b23f3a04bf5a94564bf5338d5e4%2Fdc7335d63a994993b10b147eb551d888)",
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "center",
-                    backgroundSize: "cover",
-                  }}
-                />
+                <img src={product.image} alt={product.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" style={{
+              backgroundImage: index === 0 ? "url(https://cdn.builder.io/api/v1/image/assets%2F91c68b23f3a04bf5a94564bf5338d5e4%2Fd9657f0406e64cb4a79cc1ce8cf8e68f)" : "url(https://cdn.builder.io/api/v1/image/assets%2F91c68b23f3a04bf5a94564bf5338d5e4%2Fdc7335d63a994993b10b147eb551d888)",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+              backgroundSize: "cover"
+            }} />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 {product.price}
               </div>
@@ -98,9 +58,7 @@ const FeaturedProducts = () => {
                       {product.title}
                     </CardTitle>
                   </div>
-                  {product.highlight && (
-                    <Star className="w-6 h-6 text-yellow-500 fill-current" />
-                  )}
+                  {product.highlight && <Star className="w-6 h-6 text-yellow-500 fill-current" />}
                 </div>
                 <CardDescription className="text-muted-foreground text-base">
                   {product.description}
@@ -114,15 +72,10 @@ const FeaturedProducts = () => {
                     Key Features
                   </h4>
                   <div className="space-y-2">
-                    {product.features.map((feature, idx) => (
-                      <div
-                        key={idx}
-                        className="text-sm text-muted-foreground flex items-start"
-                      >
+                    {product.features.map((feature, idx) => <div key={idx} className="text-sm text-muted-foreground flex items-start">
                         <CheckCircle className="w-4 h-4 text-primary mr-2 mt-0.5 flex-shrink-0" />
                         {feature}
-                      </div>
-                    ))}
+                      </div>)}
                   </div>
                 </div>
 
@@ -139,66 +92,15 @@ const FeaturedProducts = () => {
                   </Button>
                 </div>
               </CardContent>
-            </Card>
-          ))}
+            </Card>)}
         </div>
 
-        {/* Highlights - process style */}
-        <div className="glass rounded-2xl p-10 border-border/50">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-            {[
-              {
-                icon: Truck,
-                title: "Delivery",
-                desc: "From art approval to your dock in about 21 days.",
-                step: "01",
-              },
-              {
-                icon: Shield,
-                title: "3 year warranty",
-                desc: "LED-illuminated products and power supplies are covered.",
-                step: "02",
-              },
-              {
-                icon: Clock,
-                title: "Quotes in 24–48 hours",
-                desc: "Tailored quotes and drawings delivered fast.",
-                step: "03",
-              },
-              {
-                icon: CheckCircle,
-                title: "We are UL 48 Listed",
-                desc: "All products meet UL 48 electrical sign standards.",
-                step: "04",
-              },
-            ].map((item, idx) => {
-              const Icon = item.icon as any;
-              return (
-                <div key={idx} className="text-left">
-                  <div className="relative inline-block">
-                    <div className="w-16 h-16 rounded-lg border border-border/60 flex items-center justify-center bg-card">
-                      <Icon className="w-7 h-7 text-foreground" />
-                    </div>
-                    <div className="absolute -bottom-2 -right-2 w-8 h-8 rounded-full bg-accent text-accent-foreground text-xs font-semibold flex items-center justify-center shadow">
-                      {item.step}
-                    </div>
-                  </div>
-                  <h4 className="mt-5 text-lg font-semibold text-foreground">{item.title}</h4>
-                  <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{item.desc}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
+        {/* Quick Stats */}
+        
 
         {/* CTA to Products */}
         <div className="text-center mt-16">
-          <Button
-            variant="hero"
-            size="lg"
-            className="text-xl px-12 py-8 btn-premium"
-            asChild
-          >
+          <Button variant="hero" size="lg" className="text-xl px-12 py-8 btn-premium" asChild>
             <Link to="/products">
               <p>View Our Sunlite Signs Signage Selection Guide</p>
               <ArrowRight className="ml-3" />
@@ -206,7 +108,6 @@ const FeaturedProducts = () => {
           </Button>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
 export default FeaturedProducts;
