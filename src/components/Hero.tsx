@@ -3,6 +3,7 @@ import { ArrowRight, Factory, Truck, Award, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
+import heroPlaceholder from "@/assets/hero-placeholder.jpg";
 // TinaCMS imports - will be available after running: npx tinacms build
 let useTina: any, client: any;
 try {
@@ -193,27 +194,23 @@ const Hero = ({ data, query, variables }: HeroProps = {}) => {
         )}
 
         <img
-          src={content.image_url}
+          src={content.image_url || heroPlaceholder}
           alt="Professional channel letter manufacturing facility"
-          className={`w-full h-full object-cover object-left transition-opacity duration-500 ${
-            imageLoaded ? 'opacity-100' : 'opacity-0'
-          }`}
+          className={`w-full h-full object-cover object-left transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
           onLoad={() => setImageLoaded(true)}
-          onError={() => setImageLoaded(true)} // Show content even if image fails
+          onError={(e) => {
+            const target = e.currentTarget as HTMLImageElement;
+            if (target.src !== heroPlaceholder) {
+              target.src = heroPlaceholder;
+            }
+            setImageLoaded(true);
+          }}
+          loading="eager"
         />
       </div>
 
       {/* Foreground content aligned to right */}
-      <div
-        className="container mx-auto px-6 relative z-10 flex justify-end items-center min-h-screen"
-        style={{
-          backgroundImage:
-            "url(https://cdn.builder.io/api/v1/image/assets%2F91c68b23f3a04bf5a94564bf5338d5e4%2F106d1b9959194de5ac8f6e474874f43b)",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-        }}
-      >
+      <div className="container mx-auto px-6 relative z-10 flex justify-end items-center min-h-screen">
         <div className="bg-background/60 backdrop-blur-md rounded-2xl border border-white/20 shadow-xl p-4 md:p-6 max-w-md w-full m-4 mr-8">
           <div className="animate-fade-in">
             <h1 className="text-2xl lg:text-4xl font-bold text-white mb-3 leading-tight drop-shadow-lg">
